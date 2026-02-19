@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday Anoop 💕</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 { font-size: 50px; }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 15px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background: white;
+            color: #ee9ca7;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #nextPage {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="firstPage">
+    <h1>🎉 Happy Birthday Anoop! 🎂</h1>
+    <p>Are you my best friend?</p>
+    <button onclick="yesClick()">Yes 💕</button>
+    <button onclick="noClick()">No 😢</button>
+</div>
+
+<div id="nextPage">
+    <h1>Yay! You are my best friend! 💖</h1>
+    <p>Thank you for being amazing. Enjoy your special day!</p>
+    <img src="photo1.jpg" width="250px">
+    <img src="photo2.jpg" width="250px">
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+function yesClick() {
+    document.getElementById("firstPage").style.display = "none";
+    document.getElementById("nextPage").style.display = "block";
+}
+
+function noClick() {
+    alert("Oh no 😢 You have to click Yes to see your surprise!");
+}
+</script>
+
+</body>
+</html>

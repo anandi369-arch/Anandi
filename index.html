@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Happy Birthday Anoop 💕</title>
+    <title>Pre-Birthday Surprise for Anoop 💕</title>
     <style>
         body {
             text-align: center;
@@ -12,53 +12,66 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding: 20px;
         }
-        h1 { font-size: 50px; }
+        h1 { font-size: 45px; margin-bottom: 20px; }
+        p { font-size: 22px; margin-bottom: 30px; }
         button {
-            padding: 15px 30px;
+            padding: 12px 25px;
             font-size: 20px;
-            margin: 15px;
+            margin: 10px;
             border: none;
             border-radius: 15px;
             cursor: pointer;
             background: white;
             color: #ee9ca7;
         }
-        button:hover {
-            opacity: 0.8;
-        }
-        #nextPage {
-            display: none;
-        }
+        button:hover { opacity: 0.8; }
+        .page { display: none; }
     </style>
 </head>
 <body>
 
-<div id="firstPage">
-    <h1>🎉 Happy Birthday Anoop! 🎂</h1>
-    <p>Are you my best friend?</p>
-    <button onclick="yesClick()">Yes 💕</button>
-    <button onclick="noClick()">No 😢</button>
+<!-- Page 1 -->
+<div id="page1" class="page" style="display:block;">
+    <h1>🎉 Hey Anoop! 🎉</h1>
+    <p>Are you ready for your pre-birthday surprise?</p>
+    <button onclick="goPage(2)">Yes! 💕</button>
+    <button onclick="alert('Hmm, click Yes to start the fun 😅')">No 😢</button>
 </div>
 
-<div id="nextPage">
-    <h1>Yay! You are my best friend! 💖</h1>
-    <p>Thank you for being amazing. Enjoy your special day!</p>
-    <img src="photo1.jpg" width="250px">
-    <img src="photo2.jpg" width="250px">
-    <audio autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+<!-- Page 2 -->
+<div id="page2" class="page">
+    <h1>Almost your special day! ✨</h1>
+    <p>First question: Are you my best friend?</p>
+    <button onclick="goPage(3)">Yes 💖</button>
+    <button onclick="alert('Oops 😢 You have to click Yes!')">No 😢</button>
+</div>
+
+<!-- Page 3 -->
+<div id="page3" class="page">
+    <h1>🎈 Fun Memories 🎈</h1>
+    <p>Do you remember the funniest thing we did together?</p>
+    <button onclick="goPage(4)">Yes 😄</button>
+    <button onclick="alert('Hmm, try to remember 😅')">No 😅</button>
+</div>
+
+<!-- Page 4 -->
+<div id="page4" class="page">
+    <h1>🎊 Pre-Birthday Surprise! 🎊</h1>
+    <p>Anoop, your birthday is coming in April! 🎂</p>
+    <p>I hope your special day is full of laughter, joy, and all the things you love! ✨</p>
+    <p>Consider this a little teaser of the fun to come 💕</p>
 </div>
 
 <script>
-function yesClick() {
-    document.getElementById("firstPage").style.display = "none";
-    document.getElementById("nextPage").style.display = "block";
-}
+function goPage(pageNumber) {
+    // Hide all pages
+    let pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.style.display = 'none');
 
-function noClick() {
-    alert("Oh no 😢 You have to click Yes to see your surprise!");
+    // Show the selected page
+    document.getElementById('page' + pageNumber).style.display = 'block';
 }
 </script>
 
